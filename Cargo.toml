@@ -8,6 +8,7 @@ license = "GPL-3.0-or-later OR Apache-2.0"
 homepage = "https://github.com/rcore-os/arceos"
 repository = "https://github.com/rcore-os/arceos/tree/main/crates/axerrno"
 documentation = "https://rcore-os.github.io/arceos/axerrno/index.html"
+keywords = ["Starry"]
 
 [dependencies]
 log = "0.4"
