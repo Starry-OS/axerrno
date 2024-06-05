@@ -89,6 +89,10 @@ pub enum AxError {
     Interrupted,
     /// Syscall timed out
     Timeout,
+    /// TryAgain
+    Again,
+    /// Device or resource busy
+    Busy,
 }
 
 /// A specialized [`Result`] type with [`AxError`] as the error type.
@@ -216,6 +220,8 @@ impl AxError {
             WriteZero => "Write zero",
             Interrupted => "Interrupted",
             Timeout => "Timeout",
+            Again => "Try Again",
+            Busy => "Device or resource busy",
         }
     }
 
@@ -269,6 +275,8 @@ impl From<AxError> for LinuxError {
             WouldBlock => LinuxError::EAGAIN,
             Interrupted => LinuxError::EINTR,
             Timeout => LinuxError::ETIME,
+            Again => LinuxError::EAGAIN,
+            Busy => LinuxError::EBUSY,
         }
     }
 }
