@@ -221,7 +221,7 @@ macro_rules! ax_err {
 /// Throws an error of type [`AxError`] with the given error code, optionally
 /// with a message.
 #[macro_export]
-macro_rules! bail {
+macro_rules! ax_bail {
     ($($t:tt)*) => {
         return $crate::ax_err!($($t)*);
     };
