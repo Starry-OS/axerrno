@@ -410,6 +410,11 @@ mod tests {
     use crate::{AxError, LinuxError};
 
     #[test]
+    fn test_size() {
+        assert_eq!(size_of::<AxError>(), size_of::<LinuxError>());
+    }
+
+    #[test]
     fn test_conversion() {
         for i in 1.. {
             let Ok(err) = LinuxError::try_from(i) else {
