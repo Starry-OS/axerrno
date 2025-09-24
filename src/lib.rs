@@ -14,12 +14,11 @@ pub use linux_errno::LinuxError;
 /// Similar to [`std::io::ErrorKind`].
 ///
 /// [`std::io::ErrorKind`]: https://doc.rust-lang.org/std/io/enum.ErrorKind.html
-#[repr(i32)]
 #[non_exhaustive]
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash)]
 pub enum AxError {
     /// A socket address could not be bound because the address is already in use elsewhere.
-    AddressInUse = 1,
+    AddressInUse,
     /// An entity already exists, often a file.
     AlreadyExists,
     /// Bad address.
